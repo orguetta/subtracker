@@ -79,6 +79,13 @@ The script will perform the following steps:
 
 You can use task schedulers such as Cron Job to automate the process so that as soon as a new subdomain is discovered, you will be notified through your preferred notification channel.
 
+- Create a cronjob by running the following command: `crontab -e`
+- Add the following line to the crontab file to run the script every 2 days or at any desired frequency. In this example, I am running it every 2 days.
+
+```
+0 0 */2 * * /bin/bash /path/to/subtracker/subtracker.sh domain.tld > /dev/null 2>&1
+```
+
 ## Customization
 
 You can use a custom wordlist for brute-forcing by placing it in the dependency folder with the name `wordlist.txt`.
